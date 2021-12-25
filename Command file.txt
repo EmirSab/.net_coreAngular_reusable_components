@@ -1,0 +1,27 @@
+//kreira solution
+dotnet new sln
+
+//kreira api
+dotnet new webapi -o API
+
+//dodati projekat u solution
+dotnet sln add API
+
+// Ako se desi greska u vezi certifikata
+// crit: Microsoft.AspNetCore.Server.Kestrel[0]
+// unjeti u cmd
+dotnet dev-certs https --clean
+dotnet dev-certs https
+dotnet dev-certs https --trust
+
+//start dotnet app
+dotnet watch run
+
+//dotnet-ef
+dotnet tool install --global dotnet-ef --version 5.0.13
+
+//Migrations
+dotnet ef migrations add InitialCreate -o Data/Migrations
+
+//db update
+dotnet ef database update
