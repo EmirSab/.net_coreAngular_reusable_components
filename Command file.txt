@@ -25,3 +25,18 @@ dotnet ef migrations add InitialCreate -o Data/Migrations
 
 //db update
 dotnet ef database update
+
+//create gitignore file
+dotnet new gitignore
+
+//adding ngx-bootstrap
+ng add ngx-bootstrap
+npm install ngx-bootstrap --save
+
+//add bootstrap
+npm install bootstrap
+
+//instal font-awesome
+npm install font-awesome
+
+// adding certificate
