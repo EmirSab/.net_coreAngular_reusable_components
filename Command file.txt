@@ -46,3 +46,6 @@ npm install font-awesome
 
 //drop db
 dotnet ef database drop
+
+//instalacija toostara
+npm install ngx-toastr
