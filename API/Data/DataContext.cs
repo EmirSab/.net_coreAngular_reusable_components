@@ -34,15 +34,15 @@ namespace API.Data
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Message>()
-            .HasOne(u => u.Recipient)
-            .WithMany(m => m.MessageReceived)
-            .OnDelete(DeleteBehavior.Restrict);
+                .HasOne(u => u.Recipient)
+                .WithMany(m => m.MessagesReceived)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            
             builder.Entity<Message>()
-            .HasOne(u => u.Sender)
-            .WithMany(m => m.MessageSent)
-            .OnDelete(DeleteBehavior.Restrict);
+                .HasOne(u => u.Sender)
+                .WithMany(m => m.MessagesSent)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }
