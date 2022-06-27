@@ -49,3 +49,41 @@ dotnet ef database drop
 
 //instalacija toostara
 npm install ngx-toastr
+
+//creating a docker container
+docker run --name dev -e POSTGRE_USER=appuser -e POSTGRES_PASSWORD=Pa$$w0rd -p 5432:5432 -d postgres:latest
+
+#region run and install postgress and pgadmin
+@Medhini , @Neil @Miguel here is the solution
+
+1.First get the docker installed on your machine
+
+
+2.Docker Postgres container Install
+
+docker run -p 5432:5432  --name container-postgresdb -e POSTGRES_PASSWORD=admin -d postgres
+
+
+
+3.Docker PgAdmin container Install
+
+docker run -p 5050:80  -e "PGADMIN_DEFAULT_EMAIL=name@example.com" -e "PGADMIN_DEFAULT_PASSWORD=admin"  -d dpage/pgadmin4
+
+
+
+4. Finally here is the connectionstring you all have been waiting for
+
+---------------------------------
+
+host: host.docker.internal
+
+database: postgres
+
+user: postgres
+
+password: admin
+
+#endregion
+
+//connection string
+ "DefaultConnection": "Server=host.docker.internal; Username=postgres; Password=admin; Database=datingapp"
